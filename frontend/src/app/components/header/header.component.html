@@ -1,0 +1,17 @@
+<header>
+  <div class="container">
+    <h1>{{ title() }}</h1>
+    <nav [class.active]="active()" (click)="closeNavbar()">
+      @for(menu of menu(); track menu.href){
+        <a [href]="menu.href">{{menu.name}}</a>
+      }
+    </nav>
+    <div class="burger-container" (click)="toggleNavbar()">
+      @if (!active()) {
+      <i class="fa-solid fa-bars"></i>
+      } @else {
+      <i class="fa-solid fa-x"></i>
+      }
+    </div>
+  </div>
+</header>

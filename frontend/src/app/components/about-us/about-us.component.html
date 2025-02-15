@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="about-container">
+    <img 
+    ngSrc="/assets/Images/photo-de-profile.png" 
+    alt="image-de-profile" 
+    width="500"
+    height="525"
+    priority
+    />
+    <div class="img-text-container">
+      <h2>Salut,</h2>
+      <p>
+        Je suis <b>Grégory</b>, Développeur web passionné par les nouvelles
+        technologies et les framework NextJS et Angular mais aussi l'envie de
+        découvrir express et NestJs pour le back-end.
+      </p>
+      <div class="container-myinfo">
+        <ul>
+          @for(about of abouts(); track about.name){
+            <li><strong>{{about.name}}</strong>{{about.content}}</li>
+          }
+        </ul>
+      </div>
+      <div class="button-cv">
+        <a href="assets/CV_Tahir_Gregory.pdf" download="Cv TAHIR Gregory.pdf">Télécharger mon CV</a>
+      </div>
+    </div>
+    <div id="mes-competences"></div>
+  </div>
+</div>
+

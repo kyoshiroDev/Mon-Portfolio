@@ -1,0 +1,52 @@
+<section class="container-contact" id="contact">
+  <form
+    [formGroup]="contactForm"
+    method="POST"
+    (ngSubmit)="onSubmit()"
+  >
+    <h3>Contact</h3>
+    <div>
+      <label for="lastName">Nom :<span>*</span></label>
+      <input
+        type="text"
+        id="lastName"
+        formControlName="lastName"
+        placeholder="Parker"
+      />
+      @if(contactForm.controls.lastName.invalid && contactForm.controls.lastName.touched){
+        <span class="invalid-message">Ce champ ne doit pas être vide</span>
+      }
+      <label for="firstName">Prénom :<span>*</span></label>
+      <input
+        type="text"
+        id="firstName"
+        formControlName="firstName"
+        placeholder="Peter"
+      />
+      @if(contactForm.controls.firstName.invalid && contactForm.controls.firstName.touched){
+        <span class="invalid-message">Ce champ ne doit pas être vide</span>
+      }
+    </div>
+    <div>
+      <label for="email">E-mail :<span>*</span></label>
+      <input
+        type="email"
+        id="email"
+        formControlName="email"
+        placeholder="parker.peter@gmail.com"
+      />
+      @if(contactForm.controls.email.invalid && contactForm.controls.email.touched){
+        <span class="invalid-message">Ce champ ne doit pas être vide</span>
+      }
+    </div>
+    <div>
+      <label for="message">Message :</label>
+      <textarea
+        formControlName="message"
+        id="message"
+        placeholder="Vôtre message ..."
+      ></textarea>
+    </div>
+    <button type="submit" [disabled]="contactForm.invalid">Envoyer</button>
+  </form>
+</section>

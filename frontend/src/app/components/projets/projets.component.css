@@ -1,0 +1,88 @@
+.container-projets {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #ffffff;
+  padding-top: 50px;
+  width: 100%;
+}
+
+h3 {
+  font-size: 3em;
+  color: #1d1d1d;
+  font-family: "Montserrat Alternates", serif;
+}
+
+.projets {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  gap: 40px;
+  max-width:100%;
+  padding: 0 10px 50px 10px;
+}
+
+.projets-children {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: solid 1px #1d1d1d;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.50) 2px 2px 3px;
+  max-width: 400px;
+  min-height: 500px;
+}
+
+.card-img-top {
+  width: 100%;
+  border-radius: 5px 5px 0 0;
+}
+
+.card-body {
+  max-height: 412px;
+  font-size: 1.9em;
+  padding: 0 10px;
+}
+
+h4 {
+  margin: 0;
+}
+
+.card-text {
+  height: 80px;
+  margin: 0;
+}
+
+.list-techno {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px 0;
+  gap: 10px;
+  flex-wrap: wrap;
+  height: 122px;
+}
+
+.list-techno-item {
+  text-align: center;
+}
+
+.card-button {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card-button a {
+  cursor: pointer;
+  text-decoration: none;
+  padding-bottom: 20px;
+  color: #264de4;
+  margin: auto;
+}
+
+.card-button a:hover {
+  color: #4886f4;
+}

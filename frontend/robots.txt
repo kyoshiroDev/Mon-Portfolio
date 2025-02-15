@@ -1,0 +1,17 @@
+User-agent: *
+Disallow: /assets/
+Disallow: /environment/
+Disallow: /node_modules/
+Disallow: /src/
+Disallow: /tests/
+Disallow: /e2e/
+Disallow: /*.map$
+
+# Autoriser l'exploration des fichiers nécessaires
+Allow: /assets/images/
+Allow: /assets/css/
+Allow: /assets/js/
+
+# Ajouter un sitemap si disponible
+Sitemap: https://www.exemple.com/sitemap.xml
+

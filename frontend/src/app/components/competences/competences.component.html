@@ -1,0 +1,16 @@
+<section class="container-competences">
+  <h3>Mes Compétences</h3>
+  <div class="container-front-back">
+    <p>Front-End</p>
+    <div class="container-competences-img-front">
+      @for(competence of competencesFront(); track competence.src){
+        <img 
+        [ngSrc]="competence.src" 
+        [alt]="competence.alt" 
+        width="60"
+        height="62"
+        />
+      }
+    </div>
+  </div>
+</section>
