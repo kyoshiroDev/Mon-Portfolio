@@ -13,7 +13,7 @@
     "routes": [
       {
         "src": "/(.*)",
-        "dest": "/frontend/dist/frontend/$1"
+        "dest": "/frontend/dist/forgedigitalweb/$1"
       }
     ]
   }
