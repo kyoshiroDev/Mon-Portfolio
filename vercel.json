@@ -4,7 +4,7 @@
     {
       "src": "frontend/package.json",
       "use": "@vercel/static-build",
-      "config": { "distDir": "frontend/dist/forgedigitalweb" }
+      "config": { "distDir": "frontend/dist/frontend" }
     },
     {
       "src": "backend/server.js",
@@ -13,6 +13,6 @@
   ],
   "routes": [
     { "src": "/api/(.*)", "dest": "/backend/server.js" },
-    { "src": "/(.*)", "dest": "/frontend/dist/forgedigitalweb/index.html" }
+    { "src": "/(.*)", "dest": "/frontend/dist/frontend/index.html" }
   ]
 }
