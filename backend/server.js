@@ -8,6 +8,7 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
+// Configuration du transporteur Nodemailer
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
@@ -16,10 +17,14 @@ const transporter = nodemailer.createTransport({
   },
 });
 
+// Route principale
+app.get("/", (req, res) => {
+  res.send("Serveur Express fonctionne !");
+});
+
+// Route d'envoi d'email
 app.post("/send-email", async (req, res) => {
   const formData = req.body;
-
-  console.log(formData)
 
   try {
     // Vérifier que les informations sont présentes
@@ -27,7 +32,7 @@ app.post("/send-email", async (req, res) => {
       return res.status(400).json({ success: false, message: 'Tous les champs sont requis' });
     }
 
-    transporter.sendMail({
+    await transporter.sendMail({
       from: formData.email,
       to: process.env.EMAIL_USER,
       subject: `Nouveau message de ${formData.firstName} ${formData.lastName}`,
@@ -46,6 +51,5 @@ app.post("/send-email", async (req, res) => {
   }
 });
 
-// Lancer le serveur
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log(`Serveur lancé sur le port ${PORT}`));
+// Exporter l'application pour Vercel
+module.exports = app;
