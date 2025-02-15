@@ -1,10 +1,11 @@
 require("dotenv").config();
-const express = require("express");
 const nodemailer = require("nodemailer");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 
+const express = require("express");
 const app = express();
+
 app.use(cors());
 app.use(bodyParser.json());
 
@@ -27,7 +28,6 @@ app.post("/send-email", async (req, res) => {
   const formData = req.body;
 
   try {
-    // Vérifier que les informations sont présentes
     if (!formData.firstName || !formData.lastName || !formData.email) {
       return res.status(400).json({ success: false, message: 'Tous les champs sont requis' });
     }
@@ -51,5 +51,4 @@ app.post("/send-email", async (req, res) => {
   }
 });
 
-// Exporter l'application pour Vercel
 module.exports = app;
