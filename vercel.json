@@ -1,20 +1,18 @@
 {
-    "version": 2,
-    "builds": [
-      {
-        "src": "frontend/dist/frontend/**/*",
-        "use": "@vercel/static"
-      },
-      {
-        "src": "backend/api/server.js",
-        "use": "@vercel/node"
-      }
-    ],
-    "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "/frontend/dist/forgedigitalweb/$1"
-      }
-    ]
-  }
-  
+  "version": 2,
+  "builds": [
+    {
+      "src": "frontend/package.json",
+      "use": "@vercel/static-build",
+      "config": { "distDir": "frontend/dist/forgedigitalweb" }
+    },
+    {
+      "src": "backend/server.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    { "src": "/api/(.*)", "dest": "/backend/server.js" },
+    { "src": "/(.*)", "dest": "/frontend/dist/forgedigitalweb/index.html" }
+  ]
+}
